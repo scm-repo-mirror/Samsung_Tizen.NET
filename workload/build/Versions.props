@@ -15,7 +15,7 @@
        example: -preview.3.100+sha12345
   -->
   <PropertyGroup>
-    <TizenWorkloadVersion>10.0.122</TizenWorkloadVersion>
+    <TizenWorkloadVersion>10.0.123</TizenWorkloadVersion>
   </PropertyGroup>
 
   <!-- 
@@ -23,17 +23,40 @@
     * The first number represents the API Level.
     * The sencond and third numbers represents the reserved version.
     * The fourth number represents the build number.
-    This version is used to generate Samsung.Tizen.Ref package.
+    This version is used to generate Samsung.Tizen.Ref.APIXX package.
   -->
   <PropertyGroup>
-    <TizenFXVersion>13.0.0.19198</TizenFXVersion>
+    <TizenFXAPI11Version>11.0.0.18033</TizenFXAPI11Version>
+    <TizenFXAPI12Version>12.0.0.18510</TizenFXAPI12Version>
+    <TizenFXAPI13Version>13.0.0.19229</TizenFXAPI13Version>
+  </PropertyGroup>
+
+  <!--
+    Tizen templates verion.
+  -->
+  <PropertyGroup>
+    <TIZEN_WORKLOAD_TEMPLATES_VERSION>10.0.123</TIZEN_WORKLOAD_TEMPLATES_VERSION>
+  </PropertyGroup>
+
+  <!--
+    The default .NET SDK version to be used when executing make command without 'DOTNET_VERSION' parameter input.
+  -->
+  <PropertyGroup>
+    <MicrosoftDotnetSdkInternalPackageVersion>10.0.100</MicrosoftDotnetSdkInternalPackageVersion>
   </PropertyGroup>
 
   <!--
     Dotnet SDK versions for building the workload.
    -->
-  <PropertyGroup>
-    <MicrosoftDotnetSdkInternalPackageVersion>10.0.100</MicrosoftDotnetSdkInternalPackageVersion>
-    <MicrosoftDotNetBuildTasksFeedPackageVersion>10.0.0-beta.25523.113</MicrosoftDotNetBuildTasksFeedPackageVersion>
+  <PropertyGroup Condition="$(MicrosoftDotnetSdkInternalPackageVersion.StartsWith('8.0'))">
+    <MicrosoftDotNetBuildTasksFeedPackageVersion>8.0.0-beta.24360.5</MicrosoftDotNetBuildTasksFeedPackageVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="$(MicrosoftDotnetSdkInternalPackageVersion.StartsWith('9.0'))">
+    <MicrosoftDotNetBuildTasksFeedPackageVersion>9.0.0-beta.25065.2</MicrosoftDotNetBuildTasksFeedPackageVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="$(MicrosoftDotnetSdkInternalPackageVersion.StartsWith('10.0'))">
+    <MicrosoftDotNetBuildTasksFeedPackageVersion>10.0.0-beta.25531.102</MicrosoftDotNetBuildTasksFeedPackageVersion>
   </PropertyGroup>
 </Project>

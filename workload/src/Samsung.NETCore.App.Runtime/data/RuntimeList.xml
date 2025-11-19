@@ -1,2 +1,5 @@
-<FileList TargetFrameworkIdentifier=".NETCoreApp" TargetFrameworkVersion="10.0" FrameworkName="Microsoft.NETCore.App" Name=".NET Runtime">
-</FileList>
+<FileList TargetFrameworkIdentifier=".NETCoreApp" TargetFrameworkVersion="6.0" FrameworkName="Microsoft.NETCore.App" Name=".NET Runtime 6" />
+<FileList TargetFrameworkIdentifier=".NETCoreApp" TargetFrameworkVersion="7.0" FrameworkName="Microsoft.NETCore.App" Name=".NET Runtime 7" />
+<FileList TargetFrameworkIdentifier=".NETCoreApp" TargetFrameworkVersion="8.0" FrameworkName="Microsoft.NETCore.App" Name=".NET Runtime 8" />
+<FileList TargetFrameworkIdentifier=".NETCoreApp" TargetFrameworkVersion="9.0" FrameworkName="Microsoft.NETCore.App" Name=".NET Runtime 9" />
+<FileList TargetFrameworkIdentifier=".NETCoreApp" TargetFrameworkVersion="10.0" FrameworkName="Microsoft.NETCore.App" Name=".NET Runtime 10" />

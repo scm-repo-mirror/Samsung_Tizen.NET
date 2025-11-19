@@ -8,6 +8,8 @@ NUGET_ORG := https://api.nuget.org/v3/index.json
 
 .DEFAULT_GOAL := packs
 
+export DOTNET_VERSION
+
 include $(TOP)/Config.mk
 
 DIRECTORIES += \
@@ -37,15 +39,18 @@ $(WORKLOAD_PACKS_OUTDIR)/$(1)$(3).$(2).nupkg: $(DOTNET)
 			-p:IncludeSymbols=False \
 			-p:TizenPackVersion=$(2) \
 			-p:TizenVersionHash=$(CURRENT_HASH) \
-			-p:DotNetPreviewVersionBand=$(4)
+			-p:DotNetPreviewVersionBand=$(4) \
+			-p:MicrosoftDotnetSdkInternalPackageVersion=$(DOTNET_VERSION)
 
 NUPKG_TARGETS += $(WORKLOAD_PACKS_OUTDIR)/$(1)$(3).$(2).nupkg
 endef
 
 $(eval $(call CreateNuGetPkgs,Samsung.NET.Sdk.Tizen,$(TIZEN_WORKLOAD_VERSION_FULL),.Manifest-$(DOTNET_VERSION_BAND),$(DOTNET_VERSION_BAND)))
 $(eval $(call CreateNuGetPkgs,Samsung.Tizen.Sdk,$(TIZEN_WORKLOAD_VERSION_FULL)))
-$(eval $(call CreateNuGetPkgs,Samsung.Tizen.Ref,$(TIZEN_WORKLOAD_VERSION_FULL)))
-$(eval $(call CreateNuGetPkgs,Samsung.Tizen.Templates,$(TIZEN_WORKLOAD_VERSION_FULL)))
+$(eval $(call CreateNuGetPkgs,Samsung.Tizen.Ref.API11,$(TizenFXAPI11Version)))
+$(eval $(call CreateNuGetPkgs,Samsung.Tizen.Ref.API12,$(TizenFXAPI12Version)))
+$(eval $(call CreateNuGetPkgs,Samsung.Tizen.Ref.API13,$(TizenFXAPI13Version)))
+$(eval $(call CreateNuGetPkgs,Samsung.Tizen.Templates,$(TIZEN_WORKLOAD_TEMPLATES_VERSION)))
 $(eval $(call CreateNuGetPkgs,Samsung.NETCore.App.Runtime,$(TIZEN_WORKLOAD_VERSION_FULL),.tizen))
 
 .PHONY: packs
@@ -92,7 +97,9 @@ $(TMPDIR)/msi: install
 	@cp -fr $(DOTNET_MANIFESTS_DESTDIR) $@/sdk-manifests/$(DOTNET_VERSION_BAND)
 	@mkdir -p $@/packs
 	@cp -fr $(DOTNET_DESTDIR)/packs/Samsung.Tizen.Sdk $@/packs
-	@cp -fr $(DOTNET_DESTDIR)/packs/Samsung.Tizen.Ref $@/packs
+	@cp -fr $(DOTNET_DESTDIR)/packs/Samsung.Tizen.Ref.API11 $@/packs
+	@cp -fr $(DOTNET_DESTDIR)/packs/Samsung.Tizen.Ref.API12 $@/packs
+	@cp -fr $(DOTNET_DESTDIR)/packs/Samsung.Tizen.Ref.API13 $@/packs
 	@cp -fr $(DOTNET_DESTDIR)/packs/Samsung.NETCore.App.Runtime.* $@/packs
 	@mkdir -p $@/template-packs
 	@cp -f $(DOTNET_DESTDIR)/template-packs/samsung.tizen.templates.*.nupkg $@/template-packs

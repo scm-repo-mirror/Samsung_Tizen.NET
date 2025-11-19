@@ -1,8 +1,23 @@
 # DOTNET_VERSION
 -include $(TMPDIR)/dotnet-version.config
 $(TMPDIR)/dotnet-version.config: $(TOP)/build/Versions.props
+ifeq ($(DOTNET_VERSION), )
 	@mkdir -p $(TMPDIR)
 	@grep "<MicrosoftDotnetSdkInternalPackageVersion>" build/Versions.props | sed -e 's/<\/*MicrosoftDotnetSdkInternalPackageVersion>//g' -e 's/[ \t]*/DOTNET_VERSION=/' > $@
+else
+	@mkdir -p $(TMPDIR)
+	@echo "DOTNET_VERSION=$(DOTNET_VERSION)" > $@
+	$(info TizenFXAPI11Version is.. $(TizenFXAPI11Version))
+endif
+
+# Temporal Workaround to set versions manually.
+TizenFXAPI11Version=11.0.0.18033
+TizenFXAPI12Version=12.0.0.18510
+TizenFXAPI13Version=13.0.0.19229
+TIZEN_WORKLOAD_TEMPLATES_VERSION=10.0.123
+
+$(info DOTNET_VERSION is.. $(DOTNET_VERSION))
+
 DOTNET_VERSION_BAND = $(firstword $(subst -, ,$(DOTNET_VERSION)))
 
 IS_PRERELEASE=$(findstring -,$(DOTNET_VERSION))
@@ -74,8 +89,4 @@ else
 	endif
 endif
 
-ifeq ($(IS_STABLE_RELEASE_TAG), true)
-	TIZEN_WORKLOAD_VERSION_FULL := $(TIZEN_WORKLOAD_VERSION)
-else
-	TIZEN_WORKLOAD_VERSION_FULL := $(TIZEN_WORKLOAD_VERSION)-$(PRERELEASE_VERSION).$(TIZEN_COMMIT_DISTANCE)
-endif
+TIZEN_WORKLOAD_VERSION_FULL := $(TIZEN_WORKLOAD_VERSION)

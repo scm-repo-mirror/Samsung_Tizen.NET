@@ -1,7 +1,6 @@
 ElmSharp.dll|Samsung.Tizen.Ref|4.0.0.0|4.0.0.0
 ElmSharp.Wearable.dll|Samsung.Tizen.Ref|4.0.0.0|4.0.0.0
 Tizen.Account.AccountManager.dll|Samsung.Tizen.Ref|4.0.0.0|4.0.0.0
-Tizen.Account.FidoClient.dll|Samsung.Tizen.Ref|4.0.0.0|4.0.0.0
 Tizen.Account.OAuth2.dll|Samsung.Tizen.Ref|4.0.0.0|4.0.0.0
 Tizen.Account.SyncManager.dll|Samsung.Tizen.Ref|4.0.0.0|4.0.0.0
 Tizen.AIAvatar.dll|Samsung.Tizen.Ref|4.0.0.0|4.0.0.0
@@ -27,6 +26,8 @@ Tizen.Applications.Shortcut.dll|Samsung.Tizen.Ref|4.0.0.0|4.0.0.0
 Tizen.Applications.ThemeManager.dll|Samsung.Tizen.Ref|4.0.0.0|4.0.0.0
 Tizen.Applications.ToastMessage.dll|Samsung.Tizen.Ref|4.0.0.0|4.0.0.0
 Tizen.Applications.UI.dll|Samsung.Tizen.Ref|4.0.0.0|4.0.0.0
+Tizen.Applications.UI.Gadget.dll|Samsung.Tizen.Ref|4.0.0.0|4.0.0.0
+Tizen.Applications.UnitedService.dll|Samsung.Tizen.Ref|4.0.0.0|4.0.0.0
 Tizen.Applications.WatchApplication.dll|Samsung.Tizen.Ref|4.0.0.0|4.0.0.0
 Tizen.Applications.WatchfaceComplication.dll|Samsung.Tizen.Ref|4.0.0.0|4.0.0.0
 Tizen.Applications.WidgetApplication.dll|Samsung.Tizen.Ref|4.0.0.0|4.0.0.0
@@ -40,12 +41,9 @@ Tizen.Data.Tdbc.dll|Samsung.Tizen.Ref|4.0.0.0|4.0.0.0
 Tizen.Data.Tdbc.Driver.Sqlite.dll|Samsung.Tizen.Ref|4.0.0.0|4.0.0.0
 Tizen.dll|Samsung.Tizen.Ref|4.0.0.0|4.0.0.0
 Tizen.Location.dll|Samsung.Tizen.Ref|4.0.0.0|4.0.0.0
-Tizen.Location.Geofence.dll|Samsung.Tizen.Ref|4.0.0.0|4.0.0.0
 Tizen.Log.dll|Samsung.Tizen.Ref|4.0.0.0|4.0.0.0
 Tizen.MachineLearning.Inference.dll|Samsung.Tizen.Ref|4.0.0.0|4.0.0.0
 Tizen.MachineLearning.Train.dll|Samsung.Tizen.Ref|4.0.0.0|4.0.0.0
-Tizen.Maps.dll|Samsung.Tizen.Ref|4.0.0.0|4.0.0.0
-Tizen.Messaging.dll|Samsung.Tizen.Ref|4.0.0.0|4.0.0.0
 Tizen.Messaging.Push.dll|Samsung.Tizen.Ref|4.0.0.0|4.0.0.0
 Tizen.Multimedia.AudioIO.dll|Samsung.Tizen.Ref|4.0.0.0|4.0.0.0
 Tizen.Multimedia.Camera.dll|Samsung.Tizen.Ref|4.0.0.0|4.0.0.0
@@ -65,9 +63,10 @@ Tizen.Network.Nfc.dll|Samsung.Tizen.Ref|4.0.0.0|4.0.0.0
 Tizen.Network.Nsd.dll|Samsung.Tizen.Ref|4.0.0.0|4.0.0.0
 Tizen.Network.Smartcard.dll|Samsung.Tizen.Ref|4.0.0.0|4.0.0.0
 Tizen.Network.Stc.dll|Samsung.Tizen.Ref|4.0.0.0|4.0.0.0
+Tizen.Network.Tethering.dll|Samsung.Tizen.Ref|4.0.0.0|4.0.0.0
 Tizen.Network.WiFiDirect.dll|Samsung.Tizen.Ref|4.0.0.0|4.0.0.0
 Tizen.Network.WiFi.dll|Samsung.Tizen.Ref|4.0.0.0|4.0.0.0
-Tizen.Nlp.dll|Samsung.Tizen.Ref|4.0.0.0|4.0.0.0
+Tizen.NUI.AIAvartar.dll|Samsung.Tizen.Ref|4.0.0.0|4.0.0.0
 Tizen.NUI.Components.dll|Samsung.Tizen.Ref|4.0.0.0|4.0.0.0
 Tizen.NUI.dll|Samsung.Tizen.Ref|4.0.0.0|4.0.0.0
 Tizen.NUI.Extension.dll|Samsung.Tizen.Ref|4.0.0.0|4.0.0.0

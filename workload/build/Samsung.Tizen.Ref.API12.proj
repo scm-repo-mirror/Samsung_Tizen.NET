@@ -1,8 +1,8 @@
 <!--
 ***********************************************************************************************
-Samsung.Tizen.Ref.proj
+Samsung.Tizen.Ref.API12.proj
 
-This project file is used to create the Samsung.Tizen.Ref NuGet, which is the
+This project file is used to create the Samsung.Tizen.Ref.API12 NuGet, which is the
 targeting pack containing reference assemblies and other compile time assets required
 by projects that use the Tizen .NET framework in .NET 5.
 ***********************************************************************************************
@@ -10,15 +10,15 @@ by projects that use the Tizen .NET framework in .NET 5.
 <Project Sdk="Microsoft.Build.NoTargets">
 
   <PropertyGroup>
-    <TizenFXAPILevel>$(TizenFXVersion.Split(".")[0])</TizenFXAPILevel>
+    <TizenFXAPILevel>$(TizenFXAPI12Version.Split(".")[0])</TizenFXAPILevel>
   </PropertyGroup>
 
   <PropertyGroup>
-    <PackageId>Samsung.Tizen.Ref</PackageId>
+    <PackageId>Samsung.Tizen.Ref.API12</PackageId>
     <Description>
       Tizen .NET reference assemblies. Please do not reference directly.
       - TizenFX API Level : $(TizenFXAPILevel)
-      - TizenFX Version : $(TizenFXVersion)
+      - TizenFX Version : $(TizenFXAPI12Version)
     </Description>
   </PropertyGroup>
 
@@ -28,7 +28,7 @@ by projects that use the Tizen .NET framework in .NET 5.
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="$(TizenFXPackageName)" Version="$(TizenFXVersion)" GeneratePathProperty="true" />
+    <PackageReference Include="$(TizenFXPackageName)" Version="$(TizenFXAPI12Version)" GeneratePathProperty="true" />
   </ItemGroup>
 
   <PropertyGroup>
@@ -53,7 +53,7 @@ by projects that use the Tizen .NET framework in .NET 5.
     </ItemGroup>
 
     <ItemGroup>
-      <_PackageFiles Include="@(_TizenRefPackAssemblies)" PackagePath="ref\net10.0" TargetPath="ref\net10.0" />
+      <_PackageFiles Include="@(_TizenRefPackAssemblies)" PackagePath="ref\net6.0" TargetPath="ref\net6.0" />
       <_PackageFiles Include="$(_ProjectSourceDirectory)Samsung.Tizen.Ref/data/*.txt" PackagePath="data" />
       <_PackageFiles Include="$(_ProjectSourceDirectory)Samsung.Tizen.Ref/runtime.json" PackagePath=".\" />
     </ItemGroup>
@@ -68,7 +68,7 @@ by projects that use the Tizen .NET framework in .NET 5.
     <ItemGroup>
       <FrameworkListRootAttributes Include="Name" Value=".NET 10.0 - Tizen" />
       <FrameworkListRootAttributes Include="TargetFrameworkIdentifier" Value=".NETCoreApp" />
-      <FrameworkListRootAttributes Include="TargetFrameworkVersion" Value="10.0" />
+      <FrameworkListRootAttributes Include="TargetFrameworkVersion" Value="9.0" />
       <FrameworkListRootAttributes Include="FrameworkName" Value="Samsung.Tizen" />
     </ItemGroup>
 

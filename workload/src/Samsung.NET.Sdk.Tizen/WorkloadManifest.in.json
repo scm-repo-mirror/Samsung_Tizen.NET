@@ -5,12 +5,9 @@
       "description": ".NET SDK Workload for building Tizen applications.",
       "packs": [
         "Samsung.Tizen.Sdk",
-        "Samsung.Tizen.Sdk.net6",
-        "Samsung.Tizen.Sdk.net7",
-        "Samsung.Tizen.Sdk.net8",
-        "Samsung.Tizen.Sdk.net9",
-        "Samsung.Tizen.Sdk.net10",
-        "Samsung.Tizen.Ref",
+        "Samsung.Tizen.Ref.API11",
+        "Samsung.Tizen.Ref.API12",
+        "Samsung.Tizen.Ref.API13",
         "Samsung.Tizen.Templates",
         "Samsung.NETCore.App.Runtime.tizen"
       ]
@@ -21,48 +18,21 @@
       "kind": "sdk",
       "version": "@TIZEN_WORKLOAD_VERSION@"
     },
-    "Samsung.Tizen.Sdk.net6": {
-      "kind": "sdk",
-      "version": "9.0.104",
-      "alias-to": {
-        "any": "Samsung.Tizen.Sdk"
-      }
-    },
-    "Samsung.Tizen.Sdk.net7": {
-      "kind": "sdk",
-      "version": "10.0.119",
-      "alias-to": {
-        "any": "Samsung.Tizen.Sdk"
-      }
-    },
-    "Samsung.Tizen.Sdk.net8": {
-      "kind": "sdk",
-      "version": "10.0.120",
-      "alias-to": {
-        "any": "Samsung.Tizen.Sdk"
-      }
-    },
-    "Samsung.Tizen.Sdk.net9": {
-      "kind": "sdk",
-      "version": "10.0.121",
-      "alias-to": {
-        "any": "Samsung.Tizen.Sdk"
-      }
-    },
-    "Samsung.Tizen.Sdk.net10": {
-      "kind": "sdk",
-      "version": "@TIZEN_WORKLOAD_VERSION@",
-      "alias-to": {
-        "any": "Samsung.Tizen.Sdk"
-      }
-    },
-    "Samsung.Tizen.Ref": {
+    "Samsung.Tizen.Ref.API11": {
       "kind": "framework",
-      "version": "@TIZEN_WORKLOAD_VERSION@"
+      "version": "@TizenFXAPI11Version@"
+    },
+    "Samsung.Tizen.Ref.API12": {
+      "kind": "framework",
+      "version": "@TizenFXAPI12Version@"
+    },
+    "Samsung.Tizen.Ref.API13": {
+      "kind": "framework",
+      "version": "@TizenFXAPI13Version@"
     },
     "Samsung.Tizen.Templates": {
       "kind": "template",
-      "version": "@TIZEN_WORKLOAD_VERSION@"
+      "version": "@TIZEN_WORKLOAD_TEMPLATES_VERSION@"
     },
     "Samsung.NETCore.App.Runtime.tizen": {
       "kind": "framework",

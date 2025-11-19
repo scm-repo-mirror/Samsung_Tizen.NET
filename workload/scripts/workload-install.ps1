@@ -65,6 +65,7 @@ $LatestVersionMap = [ordered]@{
     "$ManifestBaseName-9.0.200" = "10.0.105";
     "$ManifestBaseName-9.0.300" = "10.0.117";
     "$ManifestBaseName-10.0.100-rc.2" = "10.0.118";
+    "$ManifestBaseName-10.0.100" = "10.0.123";
 }
 
 function New-TemporaryDirectory {

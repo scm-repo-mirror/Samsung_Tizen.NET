@@ -22,11 +22,11 @@ Copyright (c) Samsung All rights reserved.
     <_TargetFramework Condition="$(TargetFramework.EndsWith('tizen'))">$(TargetFramework)$(_DefaultTargetPlatformVersion)</_TargetFramework>
     <_TargetFramework Condition="!$(TargetFramework.EndsWith('tizen'))">$(TargetFramework)</_TargetFramework>
 
-    <!-- Tizen7.0 refers TizenFX 10.0.0.17508. Tizen8.0 refers TizenFX 11.0.0.18033. Tizen9.0 refers TizenFX 12.0.0.18510. Tizen10.0 refers TizenFX **FromWorkload**.-->
-    <_TargetingPackVersion>**FromWorkload**</_TargetingPackVersion>
-    <_TargetingPackVersion Condition="$(_TargetFramework.EndsWith('7.0'))">7.0.123</_TargetingPackVersion>
-    <_TargetingPackVersion Condition="$(_TargetFramework.EndsWith('8.0'))">8.0.154</_TargetingPackVersion>
-    <_TargetingPackVersion Condition="$(_TargetFramework.EndsWith('9.0'))">9.0.104</_TargetingPackVersion>
+    <!-- Tizen8.0 refers TizenFX 11.0.0.18033. Tizen9.0 refers TizenFX 12.0.0.18510. Tizen10.0 refers TizenFX $(TizenFXAPI13Version).-->
+    <_TargetingPackVersion>13.0.0.19229</_TargetingPackVersion>
+    <_TargetingPackVersion Condition="$(_TargetFramework.EndsWith('8.0'))">11.0.0.18033</_TargetingPackVersion>
+    <_TargetingPackVersion Condition="$(_TargetFramework.EndsWith('9.0'))">12.0.0.18510</_TargetingPackVersion>
+    <_TargetingPackVersion Condition="$(_TargetFramework.EndsWith('10.0'))">13.0.0.19229</_TargetingPackVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -44,6 +44,7 @@ Copyright (c) Samsung All rights reserved.
     <SupportedAPILevel Include="v11.0" MappedAPIVersion="8.0"/>
     <SupportedAPILevel Include="v12.0" MappedAPIVersion="9.0"/>
     <SupportedAPILevel Include="v13.0" MappedAPIVersion="10.0"/>
+    <SupportedAPILevel Include="v14.0" MappedAPIVersion="11.0"/>
   </ItemGroup>
 
   <ItemGroup>
@@ -51,6 +52,7 @@ Copyright (c) Samsung All rights reserved.
     <TizenSdkSupportedTargetPlatformVersion Include="8.0" />
     <TizenSdkSupportedTargetPlatformVersion Include="9.0" />
     <TizenSdkSupportedTargetPlatformVersion Include="10.0" />
+    <TizenSdkSupportedTargetPlatformVersion Include="11.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -59,9 +61,34 @@ Copyright (c) Samsung All rights reserved.
 
   <ItemGroup>
     <KnownFrameworkReference
+      Condition="'$(TargetPlatformVersion)' == '8.0'"
       Include="Samsung.Tizen"
       TargetFramework="$(_TargetFramework)"
-      TargetingPackName="Samsung.Tizen.Ref"
+      TargetingPackName="Samsung.Tizen.Ref.API11"
+      TargetingPackVersion="$(_TargetingPackVersion)"
+      Profile="Tizen"
+    />
+    <KnownFrameworkReference
+      Condition="'$(TargetPlatformVersion)' == '9.0'"
+      Include="Samsung.Tizen"
+      TargetFramework="$(_TargetFramework)"
+      TargetingPackName="Samsung.Tizen.Ref.API12"
+      TargetingPackVersion="$(_TargetingPackVersion)"
+      Profile="Tizen"
+    />
+    <KnownFrameworkReference
+      Condition="'$(TargetPlatformVersion)' == '10.0'"
+      Include="Samsung.Tizen"
+      TargetFramework="$(_TargetFramework)"
+      TargetingPackName="Samsung.Tizen.Ref.API13"
+      TargetingPackVersion="$(_TargetingPackVersion)"
+      Profile="Tizen"
+    />
+    <KnownFrameworkReference
+      Condition="'$(TargetPlatformVersion)' == '11.0'"
+      Include="Samsung.Tizen"
+      TargetFramework="$(_TargetFramework)"
+      TargetingPackName="Samsung.Tizen.Ref.API13"
       TargetingPackVersion="$(_TargetingPackVersion)"
       Profile="Tizen"
     />
