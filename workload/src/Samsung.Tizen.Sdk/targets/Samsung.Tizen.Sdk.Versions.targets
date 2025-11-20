@@ -21,12 +21,6 @@ Copyright (c) Samsung All rights reserved.
     <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">$(_DefaultTargetPlatformVersion)</TargetPlatformVersion>
     <_TargetFramework Condition="$(TargetFramework.EndsWith('tizen'))">$(TargetFramework)$(_DefaultTargetPlatformVersion)</_TargetFramework>
     <_TargetFramework Condition="!$(TargetFramework.EndsWith('tizen'))">$(TargetFramework)</_TargetFramework>
-
-    <!-- Tizen8.0 refers TizenFX 11.0.0.18033. Tizen9.0 refers TizenFX 12.0.0.18510. Tizen10.0 refers TizenFX $(TizenFXAPI13Version).-->
-    <_TargetingPackVersion>13.0.0.19229</_TargetingPackVersion>
-    <_TargetingPackVersion Condition="$(_TargetFramework.EndsWith('8.0'))">11.0.0.18033</_TargetingPackVersion>
-    <_TargetingPackVersion Condition="$(_TargetFramework.EndsWith('9.0'))">12.0.0.18510</_TargetingPackVersion>
-    <_TargetingPackVersion Condition="$(_TargetFramework.EndsWith('10.0'))">13.0.0.19229</_TargetingPackVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -65,7 +59,7 @@ Copyright (c) Samsung All rights reserved.
       Include="Samsung.Tizen"
       TargetFramework="$(_TargetFramework)"
       TargetingPackName="Samsung.Tizen.Ref.API11"
-      TargetingPackVersion="$(_TargetingPackVersion)"
+      TargetingPackVersion="11.0.0.18033"
       Profile="Tizen"
     />
     <KnownFrameworkReference
@@ -73,7 +67,7 @@ Copyright (c) Samsung All rights reserved.
       Include="Samsung.Tizen"
       TargetFramework="$(_TargetFramework)"
       TargetingPackName="Samsung.Tizen.Ref.API12"
-      TargetingPackVersion="$(_TargetingPackVersion)"
+      TargetingPackVersion="12.0.0.18510"
       Profile="Tizen"
     />
     <KnownFrameworkReference
@@ -81,7 +75,7 @@ Copyright (c) Samsung All rights reserved.
       Include="Samsung.Tizen"
       TargetFramework="$(_TargetFramework)"
       TargetingPackName="Samsung.Tizen.Ref.API13"
-      TargetingPackVersion="$(_TargetingPackVersion)"
+      TargetingPackVersion="13.0.0.19231"
       Profile="Tizen"
     />
     <KnownFrameworkReference
@@ -89,7 +83,7 @@ Copyright (c) Samsung All rights reserved.
       Include="Samsung.Tizen"
       TargetFramework="$(_TargetFramework)"
       TargetingPackName="Samsung.Tizen.Ref.API13"
-      TargetingPackVersion="$(_TargetingPackVersion)"
+      TargetingPackVersion="13.0.0.19231"
       Profile="Tizen"
     />
   </ItemGroup>

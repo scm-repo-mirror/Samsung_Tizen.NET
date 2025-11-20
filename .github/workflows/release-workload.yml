@@ -7,17 +7,12 @@ on:
         description: 'Target .NET SDK Version to Release'
         required: true
       release_manifest:
-        description: 'Release Manifest, Runtime, Sdk packs?'
+        description: 'Release workload packs?'
         type: boolean
         required: false
         default: false
       release_reference:
         description: 'Release Samsung.Tizen.Ref pack?'
-        type: boolean
-        required: false
-        default: false
-      release_template:
-        description: 'Release Samsung.Tizen.Templates pack?'
         type: boolean
         required: false
         default: false
@@ -59,21 +54,17 @@ jobs:
                       -s https://api.nuget.org/v3/index.json \
                       -t 3000
                       --skip-duplicate
+        dotnet nuget push ./workload/out/nuget-unsigned/Samsung.Tizen.Templates.*.nupkg \
+                      -k ${{ secrets.NUGET_APIKEY }} \
+                      -s https://api.nuget.org/v3/index.json \
+                      -t 3000
+                      --skip-duplicate
 
     - name: Push Ref pack
       if: ${{ github.event.inputs.release_reference == true }}
       run: |
         echo "Pushing Manifest packs for version ${{ github.event.inputs.net_sdk_version }}"...
         dotnet nuget push ./workload/out/nuget-unsigned/Samsung.Tizen.Ref.*.nupkg \
-                      -k ${{ secrets.NUGET_APIKEY }} \
-                      -s https://api.nuget.org/v3/index.json \
-                      -t 3000
-                      --skip-duplicate
-
-    - name: Push Templates pack
-      if: ${{ github.event.inputs.release_template == true }}
-      run: |
-        dotnet nuget push ./workload/out/nuget-unsigned/Samsung.Tizen.Templates.*.nupkg \
                       -k ${{ secrets.NUGET_APIKEY }} \
                       -s https://api.nuget.org/v3/index.json \
                       -t 3000

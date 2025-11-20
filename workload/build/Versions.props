@@ -28,14 +28,7 @@
   <PropertyGroup>
     <TizenFXAPI11Version>11.0.0.18033</TizenFXAPI11Version>
     <TizenFXAPI12Version>12.0.0.18510</TizenFXAPI12Version>
-    <TizenFXAPI13Version>13.0.0.19229</TizenFXAPI13Version>
-  </PropertyGroup>
-
-  <!--
-    Tizen templates verion.
-  -->
-  <PropertyGroup>
-    <TIZEN_WORKLOAD_TEMPLATES_VERSION>10.0.123</TIZEN_WORKLOAD_TEMPLATES_VERSION>
+    <TizenFXAPI13Version>13.0.0.19231</TizenFXAPI13Version>
   </PropertyGroup>
 
   <!--

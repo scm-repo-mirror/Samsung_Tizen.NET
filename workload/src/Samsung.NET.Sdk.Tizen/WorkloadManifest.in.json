@@ -32,7 +32,7 @@
     },
     "Samsung.Tizen.Templates": {
       "kind": "template",
-      "version": "@TIZEN_WORKLOAD_TEMPLATES_VERSION@"
+      "version": "@TIZEN_WORKLOAD_VERSION@"
     },
     "Samsung.NETCore.App.Runtime.tizen": {
       "kind": "framework",

@@ -7,14 +7,12 @@ ifeq ($(DOTNET_VERSION), )
 else
 	@mkdir -p $(TMPDIR)
 	@echo "DOTNET_VERSION=$(DOTNET_VERSION)" > $@
-	$(info TizenFXAPI11Version is.. $(TizenFXAPI11Version))
 endif
 
 # Temporal Workaround to set versions manually.
 TizenFXAPI11Version=11.0.0.18033
 TizenFXAPI12Version=12.0.0.18510
-TizenFXAPI13Version=13.0.0.19229
-TIZEN_WORKLOAD_TEMPLATES_VERSION=10.0.123
+TizenFXAPI13Version=13.0.0.19231
 
 $(info DOTNET_VERSION is.. $(DOTNET_VERSION))
 

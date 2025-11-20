@@ -50,7 +50,7 @@ $(eval $(call CreateNuGetPkgs,Samsung.Tizen.Sdk,$(TIZEN_WORKLOAD_VERSION_FULL)))
 $(eval $(call CreateNuGetPkgs,Samsung.Tizen.Ref.API11,$(TizenFXAPI11Version)))
 $(eval $(call CreateNuGetPkgs,Samsung.Tizen.Ref.API12,$(TizenFXAPI12Version)))
 $(eval $(call CreateNuGetPkgs,Samsung.Tizen.Ref.API13,$(TizenFXAPI13Version)))
-$(eval $(call CreateNuGetPkgs,Samsung.Tizen.Templates,$(TIZEN_WORKLOAD_TEMPLATES_VERSION)))
+$(eval $(call CreateNuGetPkgs,Samsung.Tizen.Templates,$(TIZEN_WORKLOAD_VERSION_FULL)))
 $(eval $(call CreateNuGetPkgs,Samsung.NETCore.App.Runtime,$(TIZEN_WORKLOAD_VERSION_FULL),.tizen))
 
 .PHONY: packs
