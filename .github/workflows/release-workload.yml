@@ -9,13 +9,13 @@ on:
       release_manifest:
         description: 'Release workload packs?'
         type: boolean
-        required: false
-        default: false
+        required: true
+        default: true
       release_reference:
         description: 'Release Samsung.Tizen.Ref pack?'
         type: boolean
-        required: false
-        default: false
+        required: true
+        default: true
 
 jobs:
   release:
@@ -36,36 +36,36 @@ jobs:
       continue-on-error: true
 
     - name: Push Manifest/SDK/Runtime packs
-      if: ${{ github.event.inputs.release_manifest == true }}
+      if: ${{ github.event.inputs.release_manifest == 'true' }}
       run: |
         echo "Pushing Manifest packs for version ${{ github.event.inputs.net_sdk_version }}"...
-        dotnet nuget push ./workload/out/nuget-unsigned/Samsung.NET.Sdk.Tizen.Manifest.*.nupkg \
+        dotnet nuget push ./workload/out/nuget-unsigned/Samsung.NET.Sdk.Tizen.Manifest-*.nupkg \
                       -k ${{ secrets.NUGET_APIKEY }} \
                       -s https://api.nuget.org/v3/index.json \
-                      -t 3000
+                      -t 3000 \
                       --skip-duplicate
         dotnet nuget push ./workload/out/nuget-unsigned/Samsung.Tizen.Sdk.*.nupkg \
                       -k ${{ secrets.NUGET_APIKEY }} \
                       -s https://api.nuget.org/v3/index.json \
-                      -t 3000
+                      -t 3000 \
                       --skip-duplicate
         dotnet nuget push ./workload/out/nuget-unsigned/Samsung.NETCore.App.Runtime.*.nupkg \
                       -k ${{ secrets.NUGET_APIKEY }} \
                       -s https://api.nuget.org/v3/index.json \
-                      -t 3000
+                      -t 3000 \
                       --skip-duplicate
         dotnet nuget push ./workload/out/nuget-unsigned/Samsung.Tizen.Templates.*.nupkg \
                       -k ${{ secrets.NUGET_APIKEY }} \
                       -s https://api.nuget.org/v3/index.json \
-                      -t 3000
+                      -t 3000 \
                       --skip-duplicate
 
     - name: Push Ref pack
-      if: ${{ github.event.inputs.release_reference == true }}
+      if: ${{ github.event.inputs.release_reference == 'true' }}
       run: |
         echo "Pushing Manifest packs for version ${{ github.event.inputs.net_sdk_version }}"...
         dotnet nuget push ./workload/out/nuget-unsigned/Samsung.Tizen.Ref.*.nupkg \
                       -k ${{ secrets.NUGET_APIKEY }} \
                       -s https://api.nuget.org/v3/index.json \
-                      -t 3000
+                      -t 3000 \
                       --skip-duplicate
